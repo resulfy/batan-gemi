@@ -1,6 +1,7 @@
-import { Paper, TextField, Typography } from '@mui/material'
-import { Box, Container } from '@mui/system'
 import React from 'react'
+import Link from 'next/link'
+import { Box, Container } from '@mui/system'
+import { Grid, Button, Checkbox, FormControlLabel, Paper, TextField, Typography } from '@mui/material'
 
 const signin = () => {
 
@@ -33,6 +34,21 @@ const signin = () => {
                         required
                         type='password'
                     />
+                    <FormControlLabel
+                        control={<Checkbox value="remember" color='primary' />}
+                        label="Remember Me"
+                    />
+                    <Button type='submit' variant='contained' fullWidth sx={{ mt: 1 }}>
+                        Sign In
+                    </Button>
+                    <Grid container justifyContent="space-between" sx={{ mt: 1 }}>
+                        <Grid>
+                            <Link href="/forgot" passHref>Forgot Password?</Link>
+                        </Grid>
+                        <Grid>
+                            <Link href="/signup" passHref>Sign Up</Link>
+                        </Grid>
+                    </Grid>
                 </Box>
             </Paper>
         </Container>
