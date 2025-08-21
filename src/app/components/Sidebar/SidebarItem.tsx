@@ -23,7 +23,9 @@ export default function SidebarItem({ item }: Props) {
     const Icon = item.icon;
 
     const handleClick = () => {
-        if (hasChildren) setOpen((prev) => !prev);
+        if (hasChildren) {
+            setOpen((prev) => !prev);
+        }
     };
 
     return (
@@ -47,7 +49,7 @@ export default function SidebarItem({ item }: Props) {
             ) : (
                 <ListItemButton
                     component={Link}
-                    href={item.path ?? '#'}
+                    href={item.path ? item.path : ""}
                     sx={{ cursor: 'default' }}
                 >
                     {Icon && <ListItemIcon><Icon /></ListItemIcon>}

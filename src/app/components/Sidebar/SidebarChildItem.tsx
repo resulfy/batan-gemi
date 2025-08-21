@@ -13,7 +13,7 @@ export default function SidebarChildItem({ item }: Props) {
     return (
         <ListItemButton
             component={Link}
-            href={item.path ?? '#'}
+            href={item.path ? item.path : ""}
             sx={{ pl: 4 }}
         >
             <ListItemText primary={item.title} />

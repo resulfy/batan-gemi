@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Drawer, List, Toolbar } from '@mui/material';
-import { sidebarItems } from './sidebarItems';
+import { sidebarItems } from '../../types/sidebarItems';
 import SidebarItem from './SidebarItem';
 
 
@@ -18,9 +18,9 @@ export default function Sidebar() {
         >
             <Toolbar />
             <List>
-                {sidebarItems.map((item) => (
-                    <SidebarItem key={item.id} item={item} />
-                ))}
+                {sidebarItems.map((item) => {
+                    return <SidebarItem key={item.id} item={item} />
+                })}
             </List>
         </Drawer>
     );
